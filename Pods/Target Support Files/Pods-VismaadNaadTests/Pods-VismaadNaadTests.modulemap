@@ -1,0 +1,6 @@
+framework module Pods_VismaadNaadTests {
+  umbrella header "Pods-VismaadNaadTests-umbrella.h"
+
+  export *
+  module * { export * }
+}

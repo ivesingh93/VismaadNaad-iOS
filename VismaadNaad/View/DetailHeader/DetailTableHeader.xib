@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="DetailTableHeader" customModule="Vismaad_Naad" customModuleProvider="target">
+            <connections>
+                <outlet property="albumDurationLabel" destination="y4Q-Tm-Z8Z" id="S2C-Ic-HzT"/>
+                <outlet property="backgroundImage" destination="832-hB-UId" id="4cP-k2-r0w"/>
+                <outlet property="raagiImageView" destination="37k-Oc-Gvy" id="wDu-CR-1d6"/>
+                <outlet property="raagiNameLabel" destination="7E3-BW-1J4" id="53b-N0-7a9"/>
+                <outlet property="titleLabel" destination="J1c-xe-3Y0" id="Cad-zh-Cvn"/>
+                <outlet property="visualEffectView" destination="Rho-Q7-lcX" id="upd-A8-Udw"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="240"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="832-hB-UId">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="180"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                </imageView>
+                <visualEffectView opaque="NO" userInteractionEnabled="NO" alpha="0.84999999999999998" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Rho-Q7-lcX">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="180"/>
+                    <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="dBh-wm-fIx">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="180"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </view>
+                    <blurEffect style="light"/>
+                </visualEffectView>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="37k-Oc-Gvy">
+                    <rect key="frame" x="142.5" y="25" width="90" height="90"/>
+                    <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="90" id="EQZ-G4-skv"/>
+                        <constraint firstAttribute="width" secondItem="37k-Oc-Gvy" secondAttribute="height" multiplier="1:1" id="hMb-l4-fRS"/>
+                    </constraints>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7E3-BW-1J4">
+                    <rect key="frame" x="0.0" y="120" width="375" height="20"/>
+                    <fontDescription key="fontDescription" name="Georgia-Bold" family="Georgia" pointSize="17"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="y4Q-Tm-Z8Z">
+                    <rect key="frame" x="0.0" y="145" width="375" height="17.5"/>
+                    <fontDescription key="fontDescription" name="Georgia" family="Georgia" pointSize="15"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Shabads" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J1c-xe-3Y0">
+                    <rect key="frame" x="150" y="200" width="74" height="20"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <fontDescription key="fontDescription" name="Georgia-Bold" family="Georgia" pointSize="17"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" red="0.17254901959999999" green="0.21176470589999999" blue="0.2470588235" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="J1c-xe-3Y0" secondAttribute="bottom" constant="20" id="510-z2-uIt"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="832-hB-UId" secondAttribute="bottom" constant="60" id="5hA-yZ-Roi"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="Rho-Q7-lcX" secondAttribute="trailing" id="7s5-Xf-9VA"/>
+                <constraint firstItem="7E3-BW-1J4" firstAttribute="width" secondItem="iN0-l3-epB" secondAttribute="width" id="Djn-Ub-yUX"/>
+                <constraint firstItem="y4Q-Tm-Z8Z" firstAttribute="width" secondItem="iN0-l3-epB" secondAttribute="width" id="EHP-8S-qG0"/>
+                <constraint firstItem="Rho-Q7-lcX" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="Fxy-Ye-OiP"/>
+                <constraint firstItem="37k-Oc-Gvy" firstAttribute="centerY" secondItem="Rho-Q7-lcX" secondAttribute="centerY" constant="-20" id="HsJ-xh-yHH"/>
+                <constraint firstItem="7E3-BW-1J4" firstAttribute="top" secondItem="37k-Oc-Gvy" secondAttribute="bottom" constant="5" id="I46-h7-boS"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="Rho-Q7-lcX" secondAttribute="bottom" constant="60" id="MyO-75-KZm"/>
+                <constraint firstItem="832-hB-UId" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="PFb-ux-TrS"/>
+                <constraint firstItem="y4Q-Tm-Z8Z" firstAttribute="top" secondItem="7E3-BW-1J4" secondAttribute="bottom" constant="5" id="Tc6-Cq-LrC"/>
+                <constraint firstItem="37k-Oc-Gvy" firstAttribute="centerX" secondItem="vUN-kp-3ea" secondAttribute="centerX" id="Zdn-fd-zHO"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="832-hB-UId" secondAttribute="trailing" id="a6s-JR-46x"/>
+                <constraint firstItem="832-hB-UId" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="bFV-nB-kHC"/>
+                <constraint firstItem="7E3-BW-1J4" firstAttribute="centerX" secondItem="vUN-kp-3ea" secondAttribute="centerX" id="dbb-48-1h0"/>
+                <constraint firstItem="J1c-xe-3Y0" firstAttribute="centerX" secondItem="vUN-kp-3ea" secondAttribute="centerX" id="hGv-xu-oXS"/>
+                <constraint firstItem="y4Q-Tm-Z8Z" firstAttribute="centerX" secondItem="vUN-kp-3ea" secondAttribute="centerX" id="lkx-is-inQ"/>
+                <constraint firstItem="Rho-Q7-lcX" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="rxI-xA-0iS"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <point key="canvasLocation" x="32.5" y="127"/>
+        </view>
+    </objects>
+</document>

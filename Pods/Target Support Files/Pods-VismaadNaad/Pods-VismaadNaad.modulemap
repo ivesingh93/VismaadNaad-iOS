@@ -1,0 +1,6 @@
+framework module Pods_VismaadNaad {
+  umbrella header "Pods-VismaadNaad-umbrella.h"
+
+  export *
+  module * { export * }
+}
