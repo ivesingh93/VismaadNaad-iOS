@@ -24,7 +24,10 @@ class SettingsTabVC: UIViewController {
         super.viewDidLoad()
         googleAdBanner()
         if CoreDataService.isGuestUser() == true {
-            btnLogout.isHidden = true
+//            btnLogout.isHidden = true
+            btnLogout.setImage(nil, for: .normal)
+            btnLogout.setTitle("SIGN UP", for: .normal)
+            btnLogout.backgroundColor = Colors.red
         }
     }
     
@@ -124,6 +127,10 @@ class SettingsTabVC: UIViewController {
         }
     }
     @IBAction func btnLogoutClicked(_ sender: UIButton) {
+        if sender.title(for: .normal) == "SIGN UP" {
+            self.navigationController?.popToRootViewController(animated: true)
+            return
+        }
         let alert = UIAlertController(title: "Log Out", message: Messages.logoutConfirmation, preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "No", style: .default, handler: nil))
         alert.addAction(UIAlertAction(title: "Yes", style: .default, handler: { (action) in

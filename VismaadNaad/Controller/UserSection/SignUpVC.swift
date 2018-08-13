@@ -207,6 +207,8 @@ class SignUpVC: UIViewController {
             if status {
                 let statusCode = result["ResponseCode"].int
                 if statusCode == 200 {
+                    UserDefaults.standard.set(false, forKey: UserDefaultsKey.skipped)
+                    UserDefaults.standard.synchronize()
                     CoreDataService.saveLogin(self.txtUsernameField.text!, loginSource: self.loginSource!)
                     self.performSegue(withIdentifier: Segue.homeFromSignUp, sender: nil)
                     Helper.showMessage(message: Messages.signUpSuccess, success: true)

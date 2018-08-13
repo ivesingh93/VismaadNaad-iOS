@@ -31,6 +31,9 @@ class LoginVC: UIViewController {
         if let _ = CoreDataService.getLogin() {
             self.performSegue(withIdentifier: Segue.home, sender: nil)
         }
+        else if UserDefaults.standard.bool(forKey: UserDefaultsKey.skipped) == true {
+            self.performSegue(withIdentifier: Segue.home, sender: nil)
+        }
         presentInteractionController = RZVerticalSwipeInteractionController()
         if let vc = presentInteractionController as? RZVerticalSwipeInteractionController {
             vc.nextViewControllerDelegate = self;
@@ -69,6 +72,8 @@ class LoginVC: UIViewController {
             if status {
                 let statusCode = result["ResponseCode"].int
                 if statusCode == 200 {
+                    UserDefaults.standard.set(false, forKey: UserDefaultsKey.skipped)
+                    UserDefaults.standard.synchronize()
                     CoreDataService.saveLogin(result["username"].stringValue, loginSource: self.loginSource)
                     self.performSegue(withIdentifier: Segue.home, sender: nil)
                 } else {
@@ -142,6 +147,8 @@ class LoginVC: UIViewController {
     }
     @IBAction func btnSkipClicked(_ sender: UIButton) {
         CoreDataService.deleteLogin()
+        UserDefaults.standard.set(true, forKey: UserDefaultsKey.skipped)
+        UserDefaults.standard.synchronize()
         self.performSegue(withIdentifier: Segue.home, sender: sender)
     }
     

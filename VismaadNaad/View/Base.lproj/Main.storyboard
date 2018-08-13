@@ -992,7 +992,8 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KSv-gq-zaE">
-                                        <rect key="frame" x="19.5" y="552" width="335" height="26"/>
+                                        <rect key="frame" x="19.5" y="552" width="335" height="40"/>
+                                        <fontDescription key="fontDescription" name="Georgia" family="Georgia" pointSize="20"/>
                                         <state key="normal" image="logout"/>
                                         <connections>
                                             <action selector="btnLogoutClicked:" destination="apB-tZ-GfF" eventType="touchUpInside" id="YYU-vk-ZX2"/>
@@ -1020,6 +1021,7 @@
                                     <constraint firstItem="D4k-q4-Zkg" firstAttribute="top" secondItem="iKP-yI-NGC" secondAttribute="top" id="gAm-Kw-Zt2"/>
                                     <constraint firstItem="UWO-8u-hIU" firstAttribute="width" secondItem="4tU-PM-Trt" secondAttribute="width" id="gOV-On-7Rz"/>
                                     <constraint firstItem="w5N-iQ-Cq3" firstAttribute="height" secondItem="dd9-cn-4vb" secondAttribute="height" id="inh-kv-MA2"/>
+                                    <constraint firstItem="KSv-gq-zaE" firstAttribute="height" secondItem="UWO-8u-hIU" secondAttribute="height" id="sfH-Vn-tfc"/>
                                     <constraint firstItem="4tU-PM-Trt" firstAttribute="centerX" secondItem="w5N-iQ-Cq3" secondAttribute="centerX" id="vFR-60-9qH"/>
                                     <constraint firstItem="Xpt-XI-gaS" firstAttribute="width" secondItem="UWO-8u-hIU" secondAttribute="width" id="zC1-6g-5lB"/>
                                     <constraint firstItem="UWO-8u-hIU" firstAttribute="centerX" secondItem="4tU-PM-Trt" secondAttribute="centerX" id="zq6-bW-R4o"/>
@@ -2168,7 +2170,7 @@
                                 </connections>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5vS-9h-ykm" userLabel="ViewName">
-                                <rect key="frame" x="0.0" y="104" width="375" height="563"/>
+                                <rect key="frame" x="0.0" y="60" width="375" height="607"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Whats's your name?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5ET-K5-8w4">
                                         <rect key="frame" x="20" y="40" width="260.5" height="28.5"/>

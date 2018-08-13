@@ -100,6 +100,7 @@ struct UserDefaultsKey {
     static let currentShabadList = "currentShabadList"
     static let currentIndexOfShabad = "currentIndexOfShabad"
     static let visitsToPlayer = "visitsToPlayer"
+    static let skipped = "skipped"
 
 }
 
