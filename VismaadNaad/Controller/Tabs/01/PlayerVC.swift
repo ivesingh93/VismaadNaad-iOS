@@ -292,7 +292,11 @@ class PlayerVC: UIViewController {
     }
     @IBAction func playTap(_ sender: UIButton) {
         shabadPlayer.player.togglePlaying()
-        sender.isSelected = !sender.isSelected
+        if shabadPlayer.player.isPlaying {
+            playButton.isSelected = false
+        } else {
+            playButton.isSelected = true
+        }
     }
     
     @IBAction func previousTap(_ sender: Any) {
@@ -454,7 +458,7 @@ extension PlayerVC: PlayerDelegate {
             forwardButton.isEnabled = true
             if (player.playbackState == .playing) {
             playButton.isSelected = false
-             playButton.isEnabled = true
+            playButton.isEnabled = true
             }
         }
     }

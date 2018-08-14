@@ -209,6 +209,38 @@
             endingLineNumber = "69"
             landmarkName = "signIn(_:_:)"
             landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "VismaadNaad.LoginVC.signIn(Swift.String, Swift.String) -&gt; ()"
+                  moduleName = "VismaadNaad"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/jasmeetsingh/Documents/V/VismaadNaad/VismaadNaad/Controller/UserSection/LoginVC.swift"
+                  timestampString = "555922060.256888"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "70"
+                  endingLineNumber = "70"
+                  offsetFromSymbolStart = "84">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Bool, Swift.Optional&lt;__ObjC.HTTPURLResponse&gt;, SwiftyJSON.JSON) -&gt; () in VismaadNaad.LoginVC.signIn(Swift.String, Swift.String) -&gt; ()"
+                  moduleName = "VismaadNaad"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/jasmeetsingh/Documents/V/VismaadNaad/VismaadNaad/Controller/UserSection/LoginVC.swift"
+                  timestampString = "555922060.2596051"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "71"
+                  endingLineNumber = "71"
+                  offsetFromSymbolStart = "44">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -218,11 +250,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "VismaadNaad/Controller/Tabs/01/PlayerVC.swift"
-            timestampString = "555245984.700016"
+            timestampString = "555922059.212936"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "556"
-            endingLineNumber = "556"
+            startingLineNumber = "560"
+            endingLineNumber = "560"
             landmarkName = "nativeAdsFailedToLoadWithError(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -250,12 +282,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "VismaadNaad/Controller/Tabs/01/PlayerVC.swift"
-            timestampString = "555245984.700608"
+            timestampString = "555922059.213501"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "120"
-            endingLineNumber = "120"
-            landmarkName = "updateShabadDetails(_:)"
+            startingLineNumber = "295"
+            endingLineNumber = "295"
+            landmarkName = "playTap(_:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
