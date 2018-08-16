@@ -83,7 +83,7 @@ class Player: NSObject {
     func selectShabad(at position: Int) {
         let shabad = shabadList[position]
         player.radioURL = URL(string: shabad.shabad_url.addingPercentEncoding(withAllowedCharacters: CharacterSet.urlQueryAllowed)!)
-        print(player.radioURL)
+//        print(player.radioURL)
         saveCurrentPlayingShabad(shabad)
         saveShabadList(shabadList)
         UserDefaults.standard.set(position, forKey: UserDefaultsKey.currentIndexOfShabad)
@@ -143,7 +143,7 @@ class Player: NSObject {
 extension Player: FRadioPlayerDelegate {
     func playbackProgressDidChange(_ player: FRadioPlayer) {
         if let duration = player.playerItem?.currentTime() {
-            print(duration.floatValue)
+//            print(duration.floatValue)
             UserDefaults.standard.set(duration.floatValue, forKey: UserDefaultsKey.currentShabadDuration)
             UserDefaults.standard.synchronize()
         }

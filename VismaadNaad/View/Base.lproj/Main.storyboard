@@ -305,7 +305,7 @@
                                     <constraint firstItem="Dsm-MC-erB" firstAttribute="trailing" secondItem="djO-2N-AQH" secondAttribute="trailing" id="5dp-LB-Cr9"/>
                                     <constraint firstItem="EPK-Nj-ZkD" firstAttribute="centerX" secondItem="Gcn-6C-k0n" secondAttribute="centerX" id="64z-Fw-p3p"/>
                                     <constraint firstItem="xcx-mi-9tY" firstAttribute="width" secondItem="47l-zX-5Qt" secondAttribute="width" id="7gT-dC-YDm"/>
-                                    <constraint firstAttribute="bottom" secondItem="Dsm-MC-erB" secondAttribute="bottom" constant="20" id="AnS-FO-Job"/>
+                                    <constraint firstAttribute="bottom" secondItem="Dsm-MC-erB" secondAttribute="bottom" id="AnS-FO-Job"/>
                                     <constraint firstItem="Gcn-6C-k0n" firstAttribute="width" secondItem="xcx-mi-9tY" secondAttribute="width" id="FAp-Cb-tJc"/>
                                     <constraint firstItem="djO-2N-AQH" firstAttribute="width" secondItem="Gcn-6C-k0n" secondAttribute="width" id="G1D-1c-hCn"/>
                                     <constraint firstItem="lGY-ub-BsC" firstAttribute="top" secondItem="kRh-rn-9Au" secondAttribute="bottom" constant="16" id="Haq-f0-mQB"/>
@@ -933,7 +933,7 @@
                                         </constraints>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" name="Georgia" family="Georgia" pointSize="18"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" textContentType="name"/>
                                         <connections>
                                             <outlet property="delegate" destination="apB-tZ-GfF" id="hN0-L3-zHm"/>
                                         </connections>
@@ -945,7 +945,7 @@
                                         </constraints>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" name="Georgia" family="Georgia" pointSize="18"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" textContentType="email"/>
                                         <connections>
                                             <outlet property="delegate" destination="apB-tZ-GfF" id="6Bs-SL-jDQ"/>
                                         </connections>
@@ -2170,7 +2170,7 @@
                                 </connections>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5vS-9h-ykm" userLabel="ViewName">
-                                <rect key="frame" x="0.0" y="60" width="375" height="607"/>
+                                <rect key="frame" x="0.0" y="69" width="375" height="598"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Whats's your name?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5ET-K5-8w4">
                                         <rect key="frame" x="20" y="40" width="260.5" height="28.5"/>
@@ -2286,12 +2286,12 @@
                                     <constraint firstItem="bot-ge-ovc" firstAttribute="leading" secondItem="5ET-K5-8w4" secondAttribute="leading" id="Bt8-fx-QCG"/>
                                     <constraint firstItem="5ET-K5-8w4" firstAttribute="leading" secondItem="5vS-9h-ykm" secondAttribute="leading" constant="20" id="Q79-gB-rUX"/>
                                     <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="5ET-K5-8w4" secondAttribute="trailing" constant="20" symbolic="YES" id="SQk-xB-2kw"/>
-                                    <constraint firstItem="5ET-K5-8w4" firstAttribute="top" secondItem="5vS-9h-ykm" secondAttribute="top" constant="40" id="Smg-W3-u2a"/>
+                                    <constraint firstItem="5ET-K5-8w4" firstAttribute="top" secondItem="5vS-9h-ykm" secondAttribute="top" constant="10" id="Smg-W3-u2a"/>
                                     <constraint firstItem="bot-ge-ovc" firstAttribute="top" secondItem="5ET-K5-8w4" secondAttribute="bottom" constant="40" id="zNM-8f-vgL"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kxr-qf-kD1" userLabel="ViewEmail">
-                                <rect key="frame" x="0.0" y="104" width="375" height="563"/>
+                                <rect key="frame" x="0.0" y="69" width="375" height="598"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Create Account" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tfa-jn-4Qr">
                                         <rect key="frame" x="20" y="40" width="196.5" height="28.5"/>
@@ -2451,7 +2451,7 @@
                                     <constraint firstItem="2tG-1R-9wt" firstAttribute="leading" secondItem="Tfa-jn-4Qr" secondAttribute="leading" id="2Mh-VH-CXl"/>
                                     <constraint firstItem="Tfa-jn-4Qr" firstAttribute="leading" secondItem="kxr-qf-kD1" secondAttribute="leading" constant="20" id="2mp-9F-PYu"/>
                                     <constraint firstItem="2tG-1R-9wt" firstAttribute="top" secondItem="Tfa-jn-4Qr" secondAttribute="bottom" constant="40" id="Vcs-n0-mp3"/>
-                                    <constraint firstItem="Tfa-jn-4Qr" firstAttribute="top" secondItem="kxr-qf-kD1" secondAttribute="top" constant="40" id="Yvf-u3-5l2"/>
+                                    <constraint firstItem="Tfa-jn-4Qr" firstAttribute="top" secondItem="kxr-qf-kD1" secondAttribute="top" constant="10" id="Yvf-u3-5l2"/>
                                     <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="Tfa-jn-4Qr" secondAttribute="trailing" constant="20" symbolic="YES" id="hZY-HJ-1PC"/>
                                     <constraint firstAttribute="trailing" secondItem="2tG-1R-9wt" secondAttribute="trailing" constant="19" id="ne6-7W-gTW"/>
                                 </constraints>
@@ -2477,17 +2477,17 @@
                         <color key="backgroundColor" red="0.17254901959999999" green="0.21176470589999999" blue="0.2470588235" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="5vS-9h-ykm" firstAttribute="leading" secondItem="VRz-at-s09" secondAttribute="leading" id="01Z-2s-caq"/>
-                            <constraint firstItem="5vS-9h-ykm" firstAttribute="top" secondItem="VRz-at-s09" secondAttribute="top" constant="40" id="0DK-qa-X9P"/>
                             <constraint firstItem="MOw-UJ-SEO" firstAttribute="leading" secondItem="VRz-at-s09" secondAttribute="leading" constant="10" id="EGu-4w-noa"/>
+                            <constraint firstItem="5vS-9h-ykm" firstAttribute="top" secondItem="MOw-UJ-SEO" secondAttribute="bottom" constant="5" id="HJx-A6-M6V"/>
                             <constraint firstItem="VRz-at-s09" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="MOw-UJ-SEO" secondAttribute="trailing" id="Lvo-K7-qzT"/>
                             <constraint firstItem="VRz-at-s09" firstAttribute="bottom" secondItem="5vS-9h-ykm" secondAttribute="bottom" id="N7w-aB-9TN"/>
                             <constraint firstItem="GIs-jN-2GX" firstAttribute="leading" secondItem="VRz-at-s09" secondAttribute="leading" id="NLI-3Y-xS5"/>
+                            <constraint firstItem="kxr-qf-kD1" firstAttribute="top" secondItem="MOw-UJ-SEO" secondAttribute="bottom" constant="5" id="Q8t-dP-9In"/>
                             <constraint firstItem="VRz-at-s09" firstAttribute="bottom" secondItem="kxr-qf-kD1" secondAttribute="bottom" id="U34-bX-6w3"/>
                             <constraint firstItem="MOw-UJ-SEO" firstAttribute="top" secondItem="VRz-at-s09" secondAttribute="top" constant="20" id="UUO-Cr-BJC"/>
                             <constraint firstItem="VRz-at-s09" firstAttribute="bottom" secondItem="GIs-jN-2GX" secondAttribute="bottom" id="ZEg-RX-cLL"/>
                             <constraint firstItem="VRz-at-s09" firstAttribute="bottom" secondItem="00Z-md-os9" secondAttribute="bottom" constant="100" id="bct-VH-yP8"/>
                             <constraint firstItem="VRz-at-s09" firstAttribute="trailing" secondItem="00Z-md-os9" secondAttribute="trailing" constant="20" id="dN7-BM-OVL"/>
-                            <constraint firstItem="kxr-qf-kD1" firstAttribute="top" secondItem="VRz-at-s09" secondAttribute="top" constant="84" id="elt-jm-evg"/>
                             <constraint firstItem="VRz-at-s09" firstAttribute="trailing" secondItem="5vS-9h-ykm" secondAttribute="trailing" id="hSd-W2-Ljn"/>
                             <constraint firstItem="VRz-at-s09" firstAttribute="trailing" secondItem="GIs-jN-2GX" secondAttribute="trailing" id="ndL-hi-2IR"/>
                             <constraint firstItem="VRz-at-s09" firstAttribute="leading" secondItem="kxr-qf-kD1" secondAttribute="leading" id="qmQ-7K-dMo"/>

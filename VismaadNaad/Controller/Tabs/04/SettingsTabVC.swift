@@ -98,8 +98,9 @@ class SettingsTabVC: UIViewController {
         if MFMailComposeViewController.canSendMail() {
             let mailComposer = MFMailComposeViewController()
             mailComposer.mailComposeDelegate = self
-            mailComposer.setSubject("Feedback")
-            mailComposer.setToRecipients([txtEmailField.text!])
+            mailComposer.setSubject("\(txtNameField.text!) - Feedback from iOS App")
+            mailComposer.setToRecipients(["ivesingh@gmail.com"])
+            mailComposer.setCcRecipients([txtEmailField.text!])
             mailComposer.setMessageBody(txtMessageField.text!, isHTML: false)
             self.present(mailComposer, animated: true, completion: nil)
         }
@@ -111,16 +112,16 @@ class SettingsTabVC: UIViewController {
     //MARK:- Actions
     @IBAction func btnSubmitClicked(_ sender: Any) {
         var message = ""
-        if txtNameField.text!.isEmpty {
+        if txtNameField.text!.count == 0 {
             message = Messages.enterName
         }
         else if txtEmailField.text!.isValidEmail() == false {
             message = Messages.invalidEmail
         }
-        else if txtMessageField.text!.isEmpty {
+        else if txtMessageField.text!.count == 0 {
             message = Messages.enterMessage
         }
-        if message.isEmpty == false {
+        if message.isEmpty == true {
             openMailComposer(txtNameField.text!, txtEmailField.text!, _message: txtMessageField.text!)
         } else {
             Helper.showMessage(message: message, success: false)
