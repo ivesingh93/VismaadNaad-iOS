@@ -11,6 +11,8 @@ import UIKit
 
 struct Config {
     static let appName = "VismaadNaad"
+    static let feedbackMailAddress = "ivesingh@gmail.com"
+
 }
 struct Segue {
     static let signUp = "segueSignUp"
@@ -57,6 +59,7 @@ struct Messages {
     static let enterMessage = "Please enter message."
     static let enterName = "Please enter name."
     static let mailSent = "Mail Sent successfully."
+    static let enterSubject = "Please enter email subject."
 }
 struct TextFormatting {
     static let doubleLineBreak = "\n\n"

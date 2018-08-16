@@ -910,7 +910,7 @@
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XUX-fd-gjO">
                                                 <rect key="frame" x="15" y="69" width="345" height="77.5"/>
-                                                <string key="text">We value your feedback and welcome your question and concern. Fill out the form below. one of our support team members will help you.</string>
+                                                <string key="text">We value your feedback and welcome your questions and concerns. Fill out the form below and one of our support team members will get back to you.</string>
                                                 <fontDescription key="fontDescription" name="Georgia" family="Georgia" pointSize="17"/>
                                                 <color key="textColor" red="0.17254901959999999" green="0.21176470589999999" blue="0.2470588235" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
@@ -938,7 +938,7 @@
                                             <outlet property="delegate" destination="apB-tZ-GfF" id="hN0-L3-zHm"/>
                                         </connections>
                                     </textField>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="w5N-iQ-Cq3">
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Subject" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="w5N-iQ-Cq3">
                                         <rect key="frame" x="20" y="276" width="335" height="40"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="40" id="9QQ-q8-VKj"/>
