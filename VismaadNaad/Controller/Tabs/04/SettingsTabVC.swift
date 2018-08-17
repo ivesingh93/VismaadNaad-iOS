@@ -111,6 +111,7 @@ class SettingsTabVC: UIViewController {
     //MARK:- Actions
     @IBAction func btnSubmitClicked(_ sender: Any) {
         var message = ""
+        self.view.endEditing(true)
         if txtNameField.text!.count == 0 {
             message = Messages.enterName
         }

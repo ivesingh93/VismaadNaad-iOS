@@ -811,7 +811,7 @@
                                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wLU-62-W1Y">
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wLU-62-W1Y">
                                                     <rect key="frame" x="315" y="15" width="50" height="50"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="50" id="2L0-TX-04H"/>
@@ -1013,7 +1013,7 @@
                                     <constraint firstItem="dd9-cn-4vb" firstAttribute="top" secondItem="D4k-q4-Zkg" secondAttribute="bottom" constant="41" id="NwU-LF-JjZ"/>
                                     <constraint firstAttribute="trailing" secondItem="D4k-q4-Zkg" secondAttribute="trailing" id="PpF-zL-YWQ"/>
                                     <constraint firstItem="w5N-iQ-Cq3" firstAttribute="centerX" secondItem="dd9-cn-4vb" secondAttribute="centerX" id="PvV-G9-akB"/>
-                                    <constraint firstAttribute="bottom" secondItem="KSv-gq-zaE" secondAttribute="bottom" constant="40" id="Qdf-Al-yv6"/>
+                                    <constraint firstAttribute="bottom" secondItem="KSv-gq-zaE" secondAttribute="bottom" id="Qdf-Al-yv6"/>
                                     <constraint firstItem="UWO-8u-hIU" firstAttribute="top" secondItem="4tU-PM-Trt" secondAttribute="bottom" constant="21" id="Zpa-ea-eWC"/>
                                     <constraint firstItem="w5N-iQ-Cq3" firstAttribute="top" secondItem="dd9-cn-4vb" secondAttribute="bottom" constant="25" id="aPC-89-tlm"/>
                                     <constraint firstItem="KSv-gq-zaE" firstAttribute="top" secondItem="Xpt-XI-gaS" secondAttribute="bottom" constant="10" id="akj-2j-OKz"/>
@@ -2173,13 +2173,13 @@
                                 <rect key="frame" x="0.0" y="69" width="375" height="598"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Whats's your name?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5ET-K5-8w4">
-                                        <rect key="frame" x="20" y="40" width="260.5" height="28.5"/>
+                                        <rect key="frame" x="20" y="10" width="260.5" height="28.5"/>
                                         <fontDescription key="fontDescription" name="Georgia-Bold" family="Georgia" pointSize="25"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="25" translatesAutoresizingMaskIntoConstraints="NO" id="bot-ge-ovc">
-                                        <rect key="frame" x="20" y="108.5" width="336" height="155"/>
+                                        <rect key="frame" x="20" y="78.5" width="336" height="155"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UHS-5E-7ee">
                                                 <rect key="frame" x="0.0" y="0.0" width="336" height="65"/>
@@ -2294,13 +2294,13 @@
                                 <rect key="frame" x="0.0" y="69" width="375" height="598"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Create Account" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tfa-jn-4Qr">
-                                        <rect key="frame" x="20" y="40" width="196.5" height="28.5"/>
+                                        <rect key="frame" x="20" y="10" width="196.5" height="28.5"/>
                                         <fontDescription key="fontDescription" name="Georgia-Bold" family="Georgia" pointSize="25"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="25" translatesAutoresizingMaskIntoConstraints="NO" id="2tG-1R-9wt">
-                                        <rect key="frame" x="20" y="108.5" width="336" height="206"/>
+                                        <rect key="frame" x="20" y="78.5" width="336" height="206"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="otc-RW-l8p">
                                                 <rect key="frame" x="0.0" y="0.0" width="336" height="52"/>
@@ -2902,9 +2902,9 @@
         <image name="search" width="24" height="24"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="3qR-Ox-rf8"/>
+        <segue reference="XWz-Kh-A7J"/>
         <segue reference="Zm6-NS-88B"/>
-        <segue reference="1u8-6Z-qIF"/>
+        <segue reference="yxr-LN-RTy"/>
         <segue reference="whS-Bu-FGF"/>
     </inferredMetricsTieBreakers>
 </document>
