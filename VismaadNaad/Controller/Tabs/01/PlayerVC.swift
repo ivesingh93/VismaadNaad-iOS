@@ -445,6 +445,12 @@ extension PlayerVC: PlayerDelegate {
                 slider.maximumValue = totalDuration.floatValue
             }
         }
+        if slider.value == slider.maximumValue {
+            print("Shabad playing finished")
+            slider.value = 0
+            currentDurationLabel.text = "00.00"
+            next()
+        }
     }
     func player(_ player: FRadioPlayer, playerStateDidChange state: FRadioPlayerState) {
         if state == .loading {

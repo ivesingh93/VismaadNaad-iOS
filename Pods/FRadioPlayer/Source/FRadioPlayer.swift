@@ -252,7 +252,11 @@ open class FRadioPlayer: NSObject {
         if player.currentItem == nil, playerItem != nil {
             player.replaceCurrentItem(with: playerItem)
         }
-        
+        if #available(iOS 10.0, *) {
+            player.automaticallyWaitsToMinimizeStalling = false
+        } else {
+            // Fallback on earlier versions
+        }
         player.play()
         startProgressTimer()
         playbackState = .playing
