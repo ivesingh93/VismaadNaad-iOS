@@ -453,26 +453,27 @@ extension PlayerVC: PlayerDelegate {
         }
     }
     func player(_ player: FRadioPlayer, playerStateDidChange state: FRadioPlayerState) {
-        if state == .loading {
-          //  self.view.makeToast(PlayingState.loading)
-            rewindButton.isEnabled = false
-            forwardButton.isEnabled = false
-            playButton.isEnabled = false
-        } else if state == .loadingFinished {
-     //       self.view.makeToast(PlayingState.loadingFinished)
-            rewindButton.isEnabled = true
-            forwardButton.isEnabled = true
-            if (player.playbackState == .playing) {
-            playButton.isSelected = false
-            playButton.isEnabled = true
-            }
-        }
+//        if state == .loading {
+//          //  self.view.makeToast(PlayingState.loading)
+//            rewindButton.isEnabled = false
+//            forwardButton.isEnabled = false
+//            playButton.isEnabled = false
+//        } else if state == .loadingFinished {
+//     //       self.view.makeToast(PlayingState.loadingFinished)
+//            rewindButton.isEnabled = true
+//            forwardButton.isEnabled = true
+//            if (player.playbackState == .playing) {
+//            playButton.isSelected = false
+//            playButton.isEnabled = true
+//            }
+//        }
     }
     
     func player(_ player: FRadioPlayer, playbackStateDidChange state: FRadioPlaybackState) {
         if state == .playing {
             rewindButton.isEnabled = true
             forwardButton.isEnabled = true
+            playButton.isEnabled = true
         } else {
 
             //            rewindButton.isEnabled = false
