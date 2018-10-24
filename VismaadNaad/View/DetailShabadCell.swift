@@ -21,6 +21,7 @@ class DetailShabadCell: UITableViewCell {
     @IBOutlet weak var shabadNameLabel: UILabel!
     @IBOutlet weak var shabadDurationLabel: UILabel!
     @IBOutlet weak var raagiName: UILabel!
+    @IBOutlet weak var listenersCountLabel: UILabel!
 
     var dropDown = DropDown()
     
@@ -42,6 +43,12 @@ class DetailShabadCell: UITableViewCell {
     func setUpContent(_ shabad: Shabad) {
         shabadNameLabel.text = shabad.shabad_english_title
         shabadDurationLabel.text = shabad.shabad_length
+        let attachment = NSTextAttachment()
+        attachment.image = UIImage(named: "headphone")
+        let attachmentString = NSAttributedString(attachment: attachment)
+        let listenerCount = NSMutableAttributedString(string: "\(shabad.listeners)")
+        listenerCount.append(attachmentString)
+        listenersCountLabel.attributedText = listenerCount
         if isPlaylist == true {
            raagiName.text = shabad.raagi_name
         } else {

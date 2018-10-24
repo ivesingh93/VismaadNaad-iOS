@@ -214,6 +214,7 @@ struct EndPointMethod {
     static let shabads = "raagis/<raagi_name>/shabads"
     static let shabadLyrics = "linesFrom/<starting_id>/linesTo/<ending_id>"
     static let playlists = "/playlists/"
+    static let shabadListeners = "/raagiRoutes/shabadListeners/"
 
 }
 

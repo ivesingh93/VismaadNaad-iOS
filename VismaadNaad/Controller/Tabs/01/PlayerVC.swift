@@ -42,7 +42,7 @@ class PlayerVC: UIViewController {
     // Singleton reference to player
     let shabadPlayer = Player.shared
     let toast = ToastManager.shared
-    
+    var isCurrentShabad = true
     var fontSize = FontSize.normal
     var selectedIndex = 0
     var fullScreenAd: FBInterstitialAd!
@@ -285,6 +285,15 @@ class PlayerVC: UIViewController {
         textview.textAlignment = .center
     }
     
+    @objc func addShabadListener(_ listenerId: Int) {
+        if let _ = CoreDataService.getLogin() {
+            let parameters = ["id": listenerId]
+            NetworkManager.sharedManager.postRequestWithAnyDataType(with: EndPointMethod.shabadListeners, parameters) { (status, response, json) in
+            }
+            
+        }
+    }
+
     
     // MARK: - Actions
     @objc func btnBackClicked() {
@@ -318,11 +327,13 @@ class PlayerVC: UIViewController {
     //MARK: - Music Player methods
     func next() {
         shabadPlayer.next()
+        isCurrentShabad = true
         //        selectedIndex += 1
     }
     
     func previous() {
         shabadPlayer.previous()
+        isCurrentShabad = true
         //        selectedIndex -= 1
     }
     
@@ -437,6 +448,12 @@ extension PlayerVC: PlayerDelegate {
         if let duration = player.playerItem?.currentTime() {
             currentDurationLabel.text = duration.durationText
             slider.value = duration.floatValue
+            if duration.floatValue > 20 && isCurrentShabad {
+                if let id = shabad?.id {
+                self.isCurrentShabad = false
+                self.addShabadListener(id)
+                }
+            }
         }
         
         if let totalDuration = player.playerItem?.duration {

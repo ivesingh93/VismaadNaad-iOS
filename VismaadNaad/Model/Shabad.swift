@@ -21,9 +21,9 @@ class Shabad: NSObject, Codable {
     var starting_id: Int = 0
     var recording_title: String = ""
     var id: Int = 0
+    var listeners: Int = 0
     /*[6/12, 4:50 PM] Ivkaran Singh: https://s3.amazonaws.com/vismaadbani/vismaaddev/Raagis/<raagi_name>/<shabad_title>.mp3
      [6/12, 4:51 PM] Ivkaran Singh: Example: https://s3.amazonaws.com/vismaadbani/vismaaddev/Raagis/Bhai Dalbir Singh Jee/Gur Paaras Hum Loh.mp3
-
      */
     func setContent(_ contentJson: JSON) {
         ending_id = contentJson["ending_id"].intValue
@@ -35,7 +35,8 @@ class Shabad: NSObject, Codable {
         recording_title = contentJson["recording_title"].stringValue
         shabad_url = contentJson["shabad_url"].stringValue
         id = contentJson["id"].intValue
-//        
+        listeners = contentJson["listeners"].intValue
+       
 
     }
     

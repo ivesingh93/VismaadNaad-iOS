@@ -60,7 +60,7 @@ class DetailVC: UIViewController {
             tableview.contentInsetAdjustmentBehavior = .never
         }
         if let playlist = playlistName {
-            loadShabads(playlist)
+            loadShabadsViaPlaylistName(playlist)
         }
         
         // Check if any shabad was playing last time app was exited, if yes restart the player
@@ -89,7 +89,7 @@ class DetailVC: UIViewController {
                 } else {
                 }
             }
-            loadShabadsList(album.raagi_name)
+            loadShabadsViaRaagiName(album.raagi_name)
         }
      googleAdBanner()
     }
@@ -109,8 +109,8 @@ class DetailVC: UIViewController {
         super.didReceiveMemoryWarning()
     }
     //MARK: - Other methods
-    // Load Shabads according to raagi name
-    func loadShabads(_ name: String) {
+    // Load Shabads according to playlist name
+    func loadShabadsViaPlaylistName(_ name: String) {
         if let user = CoreDataService.getLogin() {
             NetworkManager.startLoader()
             let queryString = "userRoutes/users/\(user.username!)/playlists/\(name)"
@@ -133,7 +133,8 @@ class DetailVC: UIViewController {
         }
         
     }
-    func loadShabadsList(_ name: String) {
+    // Load Shabads according to raagi name
+    func loadShabadsViaRaagiName(_ name: String) {
         NetworkManager.startLoader()
         let queryString = "raagiRoutes/raagis/\(name)/shabads"
         NetworkManager.sharedManager.getRequest(with: queryString, nil) { (status, error, result) in

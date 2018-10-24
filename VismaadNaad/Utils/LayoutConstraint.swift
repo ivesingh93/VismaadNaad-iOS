@@ -49,7 +49,7 @@ class LayoutConstraint: NSLayoutConstraint {
     @IBInspectable
     var iPhoneX:CGFloat = 0 {
         didSet {
-            if UIScreen.main.bounds.maxY == 812 {
+            if UIScreen.main.bounds.maxY >= 812 {
                 constant = iPhoneX
             }
         }
