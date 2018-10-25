@@ -9,25 +9,14 @@
 import UIKit
 import DropDown
 
-@objc protocol DetailShabadDelegate {
-    func didClickedPlayNow(_ cell: DetailShabadCell)
-    @objc optional func didClickedAddToFavorite(_ cell: DetailShabadCell)
-    @objc optional func didClickedRemoveFromFavorite(_ cell: DetailShabadCell)
-}
 class DetailShabadCell: UITableViewCell {
-    
-    @IBOutlet weak var optionsButton: UIButton!
     
     @IBOutlet weak var shabadNameLabel: UILabel!
     @IBOutlet weak var shabadDurationLabel: UILabel!
-    @IBOutlet weak var raagiName: UILabel!
     @IBOutlet weak var listenersCountLabel: UILabel!
+    @IBOutlet weak var indexLabel: UILabel!
 
     var dropDown = DropDown()
-    
-    var delegate: DetailShabadDelegate?
-    
-    var isPlaylist = false
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -43,27 +32,57 @@ class DetailShabadCell: UITableViewCell {
     func setUpContent(_ shabad: Shabad) {
         shabadNameLabel.text = shabad.shabad_english_title
         shabadDurationLabel.text = shabad.shabad_length
-        let attachment = NSTextAttachment()
-        attachment.image = UIImage(named: "headphone")
-        let attachmentString = NSAttributedString(attachment: attachment)
-        let listenerCount = NSMutableAttributedString(string: "\(shabad.listeners)")
-        listenerCount.append(attachmentString)
-        listenersCountLabel.attributedText = listenerCount
-        if isPlaylist == true {
-           raagiName.text = shabad.raagi_name
-        } else {
-            optionsButton.isHidden = true
-        }
+            let attachment = NSTextAttachment()
+            attachment.image = UIImage(named: "headphone")
+            let imageOffsetY:CGFloat = -5.0;
+            attachment.bounds = CGRect(x: 0, y: imageOffsetY, width: attachment.image!.size.width, height: attachment.image!.size.height)
+            let attachmentString = NSMutableAttributedString(attachment: attachment)
+            let listenerCount = NSAttributedString(string: " \(shabad.listeners)")
+            attachmentString.append(listenerCount)
+            listenersCountLabel.attributedText = attachmentString
+    }
+}
+
+@objc protocol PlaylistShabadDelegate {
+    func didClickedPlayNow(_ cell: PlaylistShabadCell)
+    @objc optional func didClickedRemoveFromFavorite(_ cell: PlaylistShabadCell)
+}
+
+class PlaylistShabadCell: UITableViewCell {
+    
+    @IBOutlet weak var optionsButton: UIButton!
+    
+    @IBOutlet weak var shabadNameLabel: UILabel!
+    @IBOutlet weak var shabadDurationLabel: UILabel!
+    @IBOutlet weak var raagiName: UILabel!
+    
+    var dropDown = DropDown()
+    
+    var delegate: PlaylistShabadDelegate?
+    
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        // Initialization code
+    }
+    
+    override func setSelected(_ selected: Bool, animated: Bool) {
+        super.setSelected(selected, animated: animated)
+        
+        // Configure the view for the selected state
+    }
+    
+    func setUpContent(_ shabad: Shabad) {
+        shabadNameLabel.text = shabad.shabad_english_title
+        shabadDurationLabel.text = shabad.shabad_length
+        raagiName.text = shabad.raagi_name
     }
     @IBAction func btnOptionsClicked(_ sender: Any) {
-        dropDown.dataSource = ["Play now", isPlaylist ? "Delete" : "Add to Playlist"]
+        dropDown.dataSource = ["Play now", "Delete"]
         dropDown.anchorView = optionsButton
         dropDown.width = 140
         dropDown.selectionAction = { [unowned self] (index: Int, item: String) in
             self.dropDown.hide()
-            if item == "Add to Playlist" {
-                self.delegate?.didClickedAddToFavorite?(self)
-            } else if item == "Play now" {
+            if item == "Play now" {
                 self.delegate?.didClickedPlayNow(self)
             }
             else if item == "Delete" {

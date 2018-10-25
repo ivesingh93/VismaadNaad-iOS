@@ -222,16 +222,9 @@ extension PlaylistVC: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-//        if indexPath.row == 0 {
-//            let addPlaylistHeaderCell = tableView.dequeueReusableCell(withIdentifier: AddPlaylistHeader.className, for: indexPath) as! AddPlaylistHeader
-//            addPlaylistHeaderCell.selectionStyle = .none
-//            addPlaylistHeaderCell.delegate = self
-//            return addPlaylistHeaderCell
-//        }
-        let shabadCell = tableView.dequeueReusableCell(withIdentifier: DetailShabadCell.className, for: indexPath) as! DetailShabadCell
+        let shabadCell = tableView.dequeueReusableCell(withIdentifier: PlaylistShabadCell.className, for: indexPath) as! PlaylistShabadCell
         shabadCell.selectionStyle = .none
         let shabad = filteredShabadsList[indexPath.row]
-        shabadCell.isPlaylist = true
         shabadCell.setUpContent(shabad)
         shabadCell.delegate = self
         return shabadCell
@@ -256,15 +249,14 @@ extension PlaylistVC: UITableViewDataSource, UITableViewDelegate {
         return UITableViewAutomaticDimension
     }
 }
-extension PlaylistVC: DetailShabadDelegate {
-    func didClickedPlayNow(_ cell: DetailShabadCell) {
+extension PlaylistVC: PlaylistShabadDelegate {
+   
+    func didClickedPlayNow(_ cell: PlaylistShabadCell) {
         if let indexPath = tableview.indexPath(for: cell) {
             self.performSegue(withIdentifier: Segue.playerFromPlayist, sender: indexPath)
         }
     }
-    func didClickedAddToFavorite(_ cell: DetailShabadCell) {
-    }
-    func didClickedRemoveFromFavorite(_ cell: DetailShabadCell) {
+    func didClickedRemoveFromFavorite(_ cell: PlaylistShabadCell) {
         if let indexPath = tableview.indexPath(for: cell) {
             if let name = playlistName {
                 let alert = UIAlertController.init(title: "", message: "Are you sure you want to delete \(cell.shabadNameLabel.text!) shabad ?", preferredStyle: .alert)

@@ -33,7 +33,7 @@ class DetailVC: UIViewController {
     
     @IBOutlet weak var lcSearchButtonLeading: NSLayoutConstraint!
     @IBOutlet weak var lcTrailingCloseButton: NSLayoutConstraint!
-    
+
 //    let adRowStep = 6
     
 //    var adsManager: FBNativeAdsManager!
@@ -55,7 +55,7 @@ class DetailVC: UIViewController {
         shabadPreview.isHidden = true
         shabadPreview.playButton.addTarget(self, action: #selector(btnPlayClicked(_ :)), for: .touchUpInside)
         shabadPreview.detailButton.addTarget(self, action: #selector(btnDetailClicked), for: .touchUpInside)
-        
+        tableview.estimatedRowHeight = 60
         if #available(iOS 11.0, *) {
             tableview.contentInsetAdjustmentBehavior = .never
         }
@@ -274,29 +274,15 @@ extension DetailVC: UITableViewDataSource, UITableViewDelegate {
         return 1
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-//        if adsCellProvider != nil {
-//            if filteredShabadsList.count == 0 {
-//                return 0
-//            }
-//            return Int(adsCellProvider.adjustCount(UInt(self.filteredShabadsList.count), forStride: UInt(adRowStep)))
-//        }
         return filteredShabadsList.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-//        if adsCellProvider != nil && adsCellProvider.isAdCell(at: indexPath, forStride: UInt(adRowStep)) {
-//            return adsCellProvider.tableView(tableView, cellForRowAt: indexPath)
-//        }
         let shabadCell = tableView.dequeueReusableCell(withIdentifier: DetailShabadCell.className, for: indexPath) as! DetailShabadCell
         shabadCell.selectionStyle = .none
-//        let shabad = filteredShabadsList[indexPath.row - Int(indexPath.row / adRowStep)]
         let shabad = filteredShabadsList[indexPath.row]
-
         shabadCell.setUpContent(shabad)
-        if let _ = playlistName {
-            shabadCell.isPlaylist = true
-        }
-        shabadCell.delegate = self
+        shabadCell.indexLabel.text = "\(indexPath.row + 1)."
         return shabadCell
     }
     
@@ -312,6 +298,10 @@ extension DetailVC: UITableViewDataSource, UITableViewDelegate {
                 ) } )
         }
     }
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+       return 70
+    }
+    
 }
 extension DetailVC: UITextFieldDelegate {
     func textFieldDidBeginEditing(_ textField: UITextField) {
@@ -343,36 +333,7 @@ extension DetailVC: UITextFieldDelegate {
     }
     
 }
-extension DetailVC: DetailShabadDelegate {
-    func didClickedPlayNow(_ cell: DetailShabadCell) {
-        if let indexPath = tableview.indexPath(for: cell) {
-            self.performSegue(withIdentifier: Segue.player, sender: indexPath)
-        }
-    }
-    func didClickedAddToFavorite(_ cell: DetailShabadCell) {
-        if let indexPath = tableview.indexPath(for: cell) {
-            if CoreDataService.isGuestUser() == false {
-                self.performSegue(withIdentifier: Segue.addPlaylistFromDetail, sender: indexPath)
-            } else {
-                Helper.showMessage(message: Messages.notLoggedIn, success: false)
-            }
-        }
-    }
-    func didClickedRemoveFromFavorite(_ cell: DetailShabadCell) {
-        if let indexPath = tableview.indexPath(for: cell) {
-            if let name = playlistName {
-                let alert = UIAlertController.init(title: "", message: "Are you sure you want to delete \(cell.shabadNameLabel.text!) shabad ?", preferredStyle: .alert)
-                alert.addAction(UIAlertAction.init(title: "Cancel", style: .cancel, handler: nil))
-                alert.addAction(UIAlertAction.init(title: "Delete", style: .destructive, handler: { (action) in
-                    self.removeShabadFromPlaylist(name, indexPath: indexPath)
-                }))
-                self.present(alert, animated: true, completion: nil)
-            }
-        }
-    }
-    
-    
-}
+
 extension DetailVC: UITabBarControllerDelegate {
     func tabBarController(_ tabBarController: UITabBarController, shouldSelect viewController: UIViewController) -> Bool {
         if viewController.isKind(of: LibraryVC.classForCoder()) {

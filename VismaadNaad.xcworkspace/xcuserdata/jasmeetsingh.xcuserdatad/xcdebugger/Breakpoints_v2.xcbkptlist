@@ -106,11 +106,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "VismaadNaad/Controller/Tabs/01/HomeVC.swift"
-            timestampString = "560942064.4418139"
+            timestampString = "562157629.650568"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "299"
-            endingLineNumber = "299"
+            startingLineNumber = "291"
+            endingLineNumber = "291"
             landmarkName = "didLongPress(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -122,11 +122,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "VismaadNaad/Controller/Tabs/01/HomeVC.swift"
-            timestampString = "560942064.441906"
+            timestampString = "562157629.6506521"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "311"
-            endingLineNumber = "311"
+            startingLineNumber = "303"
+            endingLineNumber = "303"
             landmarkName = "didAddToFavorite(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -250,11 +250,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "VismaadNaad/Controller/Tabs/01/PlayerVC.swift"
-            timestampString = "562068127.55379"
+            timestampString = "562157629.65096"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "578"
-            endingLineNumber = "578"
+            startingLineNumber = "594"
+            endingLineNumber = "594"
             landmarkName = "PlayerVC"
             landmarkType = "21">
          </BreakpointContent>
@@ -288,22 +288,6 @@
             startingLineNumber = "113"
             endingLineNumber = "113"
             landmarkName = "btnSubmitClicked(_:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "VismaadNaad/Controller/Tabs/01/PlayerVC.swift"
-            timestampString = "562068127.5540611"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "289"
-            endingLineNumber = "289"
-            landmarkName = "addShabadListener(_:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

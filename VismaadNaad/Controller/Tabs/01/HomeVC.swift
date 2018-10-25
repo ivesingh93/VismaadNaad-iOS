@@ -199,7 +199,6 @@ class HomeVC: UIViewController {
         } else {
             if let indexpath = sender as? IndexPath {
                 if segue.identifier == Segue.detail {
-//                    let album = filteredAlbumList[indexpath.item - Int(indexpath.item / adRowStep)]
                     let album = filteredAlbumList[indexpath.item]
                     let destinationVc = segue.destination as! DetailVC
                     destinationVc.hidesBottomBarWhenPushed = true
@@ -228,12 +227,8 @@ extension HomeVC: UICollectionViewDataSource, UICollectionViewDelegate, UICollec
         return filteredAlbumList.count
     }
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-//        if adsCellProvider != nil && adsCellProvider.isAdCell(at: indexPath, forStride: UInt(adRowStep)) {
-//            return adsCellProvider.collectionView(collectionView, cellForItemAt:indexPath)
-//        }
         let albumCell = collectionView.dequeueReusableCell(withReuseIdentifier: AlbumCollectionCell.className, for: indexPath) as! AlbumCollectionCell
         albumCell.delegate = self
-//        let album = filteredAlbumList[indexPath.item - Int(indexPath.item / adRowStep)]
         let album = filteredAlbumList[indexPath.item]
         albumCell.setUpAlbum(album)
         return albumCell
@@ -242,9 +237,6 @@ extension HomeVC: UICollectionViewDataSource, UICollectionViewDelegate, UICollec
     
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-//        if adsCellProvider != nil && adsCellProvider.isAdCell(at: indexPath, forStride: UInt(adRowStep)) {
-//            return CGSize(width: UIScreen.main.bounds.size.width, height: 60)
-//        }
         let width = (UIScreen.main.bounds.size.width / 3) - 10
         if Display.typeIsLike == .iphone5 {
             return CGSize(width: width, height: width + 110)

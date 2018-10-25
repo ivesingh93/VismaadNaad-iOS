@@ -23,12 +23,14 @@ class PlayerVC: UIViewController {
     @IBOutlet weak var shabadNameLabel: UILabel!
     @IBOutlet weak var currentDurationLabel: UILabel!
     @IBOutlet weak var totalDurationLabel: UILabel!
-    
+    @IBOutlet weak var likesCountLabel: UILabel!
+
     @IBOutlet weak var rewindButton: UIButton!
     @IBOutlet weak var forwardButton: UIButton!
     @IBOutlet weak var playButton: UIButton!
     @IBOutlet weak var moreOptionsButton: UIButton!
-    
+    @IBOutlet weak var likeButton: UIButton!
+
     @IBOutlet weak var slider: ProgressSlider!
     
     @IBOutlet weak var lcBottomMusicControls: NSLayoutConstraint!
@@ -133,9 +135,6 @@ class PlayerVC: UIViewController {
     @IBAction func btnLanguageSelectionClicked(_ sender: Any) {
         self.performSegue(withIdentifier: Segue.setting, sender: sender)
     }
-    @IBAction func btnLikeClicked(_ sender: Any) {
-        self.view.makeToast("Liked")
-    }
     @IBAction func btnMoreOptionsClicked(_ sender: UIButton) {
         if CoreDataService.isGuestUser() == false {
             self.performSegue(withIdentifier: Segue.addPlaylistFromPlayer, sender: sender)
@@ -148,7 +147,9 @@ class PlayerVC: UIViewController {
             shabadPlayer.player.seek(toSecond: Int(Double(slider.value)))
         }
     }
-    
+    @IBAction func btnLikeClicked(_ sender: Any) {
+            self.likeShabad(shabad!.id, like: !likeButton.isSelected)
+    }
     // MARK: - Other methods
     // Load lyrics of shabad
     func loadShabadLyrics(_ shabad: Shabad) {
@@ -294,7 +295,22 @@ class PlayerVC: UIViewController {
         }
     }
 
-    
+    @objc func likeShabad(_ shabadId: Int, like: Bool) {
+        if let user = CoreDataService.getLogin() {
+            NetworkManager.startLoader()
+            let parameters = ShabadLike.parametersForShabadLike(username: user.username!, id: shabadId, like: like)
+            NetworkManager.sharedManager.postRequestWithAnyDataType(with: ShabadLike.shabadLikeURL, parameters) { (status, response, json) in
+                NetworkManager.stopLoader()
+                if status {
+                }
+                    else {
+                        
+                    }
+                
+            }
+            
+        }
+    }
     // MARK: - Actions
     @objc func btnBackClicked() {
         navigationController?.popViewController(animated: true)

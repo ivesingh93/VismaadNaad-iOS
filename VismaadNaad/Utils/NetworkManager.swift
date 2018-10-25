@@ -294,7 +294,17 @@ struct PlaylistMethod {
         return parameter
     }
 }
-
+struct ShabadLike {
+    static let shabadLikeURL = "userRoutes/updateShabadLike"
+    static func parametersForShabadLike(username: String, id: Int, like: Bool) -> [String : Any] {
+        
+        var parameter = [String : Any]()
+        parameter["username"] = username
+        parameter["id"] = id
+        parameter["like"] = like
+        return parameter
+    }
+}
 //MARK: - Loader Helper Method
 typealias LoaderHandlers = NetworkManager
 extension LoaderHandlers {
