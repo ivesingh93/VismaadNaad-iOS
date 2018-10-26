@@ -1199,6 +1199,12 @@
                                     <constraint firstAttribute="trailing" secondItem="7A4-oa-jjR" secondAttribute="trailing" constant="10" id="bOS-WT-aC7"/>
                                     <constraint firstItem="oBv-Qy-TMo" firstAttribute="centerY" secondItem="pin-Hv-ZCm" secondAttribute="centerY" id="yVZ-w8-ItX"/>
                                 </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="15"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="clipsToBounds" value="YES"/>
+                                </userDefinedRuntimeAttributes>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NE8-Vx-yL7">
                                 <rect key="frame" x="10" y="40" width="30" height="40"/>
@@ -2916,7 +2922,7 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="3qR-Ox-rf8"/>
-        <segue reference="Lwc-6q-snN"/>
+        <segue reference="Zm6-NS-88B"/>
         <segue reference="KFW-d4-PQ3"/>
         <segue reference="c49-Gp-uy7"/>
     </inferredMetricsTieBreakers>
