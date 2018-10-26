@@ -186,6 +186,7 @@ class NetworkManager: NSObject {
         }
         let urlStr = (API.baseURL + subUrl).addingPercentEncoding(withAllowedCharacters: CharacterSet.urlQueryAllowed)
         let url = Foundation.URL(string: urlStr!)
+        print("\(url)")
         Alamofire.request(url!, method: .get, parameters: parameters, encoding: JSONEncoding.default, headers: nil).responseJSON { response in
             print("\(response)")
             
@@ -214,7 +215,9 @@ struct EndPointMethod {
     static let shabads = "raagis/<raagi_name>/shabads"
     static let shabadLyrics = "linesFrom/<starting_id>/linesTo/<ending_id>"
     static let playlists = "/playlists/"
-    static let shabadListeners = "/raagiRoutes/shabadListeners/"
+    static let shabadListeners = "raagiRoutes/shabadListeners/"
+    static let shabadLikedByUser = "userRoutes/members/"
+    static let shabadLikes = "userRoutes/shabadLikes/"
 
 }
 

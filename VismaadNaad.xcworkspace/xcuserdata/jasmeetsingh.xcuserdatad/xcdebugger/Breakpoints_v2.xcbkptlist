@@ -201,60 +201,12 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "VismaadNaad/Controller/UserSection/LoginVC.swift"
-            timestampString = "556087674.128014"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "69"
-            endingLineNumber = "69"
-            landmarkName = "signIn(_:_:)"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "VismaadNaad.LoginVC.signIn(Swift.String, Swift.String) -&gt; ()"
-                  moduleName = "VismaadNaad"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/jasmeetsingh/Documents/VismaadNaad/VismaadNaad/Controller/UserSection/LoginVC.swift"
-                  timestampString = "562056023.736261"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "70"
-                  endingLineNumber = "70"
-                  offsetFromSymbolStart = "88">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Swift.Bool, Swift.Optional&lt;__C.NSHTTPURLResponse&gt;, SwiftyJSON.JSON) -&gt; () in VismaadNaad.LoginVC.signIn(Swift.String, Swift.String) -&gt; ()"
-                  moduleName = "VismaadNaad"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/jasmeetsingh/Documents/VismaadNaad/VismaadNaad/Controller/UserSection/LoginVC.swift"
-                  timestampString = "562056023.738857"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "71"
-                  endingLineNumber = "71"
-                  offsetFromSymbolStart = "60">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
             filePath = "VismaadNaad/Controller/Tabs/01/PlayerVC.swift"
-            timestampString = "562157629.65096"
+            timestampString = "562226026.614309"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "594"
-            endingLineNumber = "594"
+            startingLineNumber = "619"
+            endingLineNumber = "619"
             landmarkName = "PlayerVC"
             landmarkType = "21">
          </BreakpointContent>
@@ -266,7 +218,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "VismaadNaad/Model/Player.swift"
-            timestampString = "556109258.4230601"
+            timestampString = "562226026.614845"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "205"
@@ -297,13 +249,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Pods/FRadioPlayer/Source/FRadioPlayer.swift"
-            timestampString = "562053863.515983"
+            filePath = "VismaadNaad/Controller/Tabs/01/PlayerVC.swift"
+            timestampString = "562226026.614944"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "255"
-            endingLineNumber = "255"
-            landmarkName = "play()"
+            startingLineNumber = "324"
+            endingLineNumber = "324"
+            landmarkName = "shabadLikedByUser()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

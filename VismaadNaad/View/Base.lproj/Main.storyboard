@@ -1090,28 +1090,28 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GWG-O0-ma8">
-                                                    <rect key="frame" x="325.5" y="35.5" width="34.5" height="16"/>
+                                                    <rect key="frame" x="325.5" y="30" width="34.5" height="16"/>
                                                     <fontDescription key="fontDescription" name="Georgia" family="Georgia" pointSize="14"/>
                                                     <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iaE-8Q-NNt">
-                                                    <rect key="frame" x="72" y="35.5" width="34.5" height="16"/>
+                                                    <rect key="frame" x="72" y="30" width="34.5" height="16"/>
                                                     <fontDescription key="fontDescription" name="Georgia" family="Georgia" pointSize="14"/>
                                                     <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WHw-TM-dk9">
-                                                    <rect key="frame" x="10" y="58" width="355" height="1"/>
+                                                <view alpha="0.75" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WHw-TM-dk9">
+                                                    <rect key="frame" x="10" y="58.5" width="355" height="0.5"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="height" constant="1" id="PYx-Yd-h3A"/>
+                                                        <constraint firstAttribute="height" constant="0.69999999999999996" id="PYx-Yd-h3A"/>
                                                     </constraints>
                                                 </view>
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <constraints>
-                                                <constraint firstAttribute="bottom" secondItem="GWG-O0-ma8" secondAttribute="bottom" constant="8.5" id="0sG-pH-HpQ"/>
+                                                <constraint firstAttribute="bottom" secondItem="GWG-O0-ma8" secondAttribute="bottom" constant="14" id="0sG-pH-HpQ"/>
                                                 <constraint firstItem="WHw-TM-dk9" firstAttribute="leading" secondItem="eoR-LK-Ohd" secondAttribute="leading" constant="10" id="8Xw-pd-ajd"/>
                                                 <constraint firstItem="wks-5B-ZvB" firstAttribute="centerY" secondItem="eoR-LK-Ohd" secondAttribute="centerY" id="9t9-Kc-4nY"/>
                                                 <constraint firstAttribute="trailing" secondItem="WHw-TM-dk9" secondAttribute="trailing" constant="10" id="AME-2W-SeT"/>
@@ -1414,22 +1414,23 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ukk-5j-38g">
-                                                <rect key="frame" x="5" y="128" width="30" height="30"/>
+                                                <rect key="frame" x="5" y="131" width="24" height="24"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="Ukk-5j-38g" secondAttribute="height" multiplier="1:1" id="8aE-O1-kdB"/>
-                                                    <constraint firstAttribute="width" constant="30" id="Yju-VY-1jC"/>
+                                                    <constraint firstAttribute="width" constant="24" id="Yju-VY-1jC"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" name="Georgia" family="Georgia" pointSize="17"/>
                                                 <state key="normal" image="unlike">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
+                                                <state key="selected" image="like"/>
                                                 <connections>
                                                     <action selector="btnLikeClicked:" destination="z2Q-CZ-4jU" eventType="touchUpInside" id="QSR-xV-fT3"/>
                                                 </connections>
                                             </button>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IS3-va-BJl">
-                                                <rect key="frame" x="16.5" y="158" width="7.5" height="19.5"/>
-                                                <fontDescription key="fontDescription" name="Georgia" family="Georgia" pointSize="17"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IS3-va-BJl">
+                                                <rect key="frame" x="17" y="155" width="0.0" height="0.0"/>
+                                                <fontDescription key="fontDescription" name="Georgia" family="Georgia" pointSize="14"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>

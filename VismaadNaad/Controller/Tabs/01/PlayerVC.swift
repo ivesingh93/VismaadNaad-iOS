@@ -16,7 +16,7 @@ class PlayerVC: UIViewController {
     
     @IBOutlet weak var navigationView: NavigationBarView!
     var bannerView: GADBannerView!
-
+    
     @IBOutlet weak var textview: UITextView!
     
     @IBOutlet weak var raagiNameLabel: UILabel!
@@ -24,13 +24,13 @@ class PlayerVC: UIViewController {
     @IBOutlet weak var currentDurationLabel: UILabel!
     @IBOutlet weak var totalDurationLabel: UILabel!
     @IBOutlet weak var likesCountLabel: UILabel!
-
+    
     @IBOutlet weak var rewindButton: UIButton!
     @IBOutlet weak var forwardButton: UIButton!
     @IBOutlet weak var playButton: UIButton!
     @IBOutlet weak var moreOptionsButton: UIButton!
     @IBOutlet weak var likeButton: UIButton!
-
+    
     @IBOutlet weak var slider: ProgressSlider!
     
     @IBOutlet weak var lcBottomMusicControls: NSLayoutConstraint!
@@ -79,12 +79,12 @@ class PlayerVC: UIViewController {
         }
         
         shabad = shabadList[selectedIndex]
-
+        
         if let shabad = shabad {
             rewindButton.isEnabled = false
             forwardButton.isEnabled = false
             playButton.isEnabled = false
-            loadShabadLyrics(shabad)
+//            loadShabadLyrics(shabad)
         }
         // If shabad is already playing, enable rewind and pause button
         if isAlreadyPlayingShabad == true {
@@ -113,6 +113,7 @@ class PlayerVC: UIViewController {
         googleAdBanner()
         showFullScreenAd()
         addObservers()
+        
     }
     func addObservers() {
         NotificationCenter.default.addObserver(self, selector: #selector(updateShabadDetails(_:)), name: NSNotification.Name(NotificationObserverKey.playerStateDidChange), object: nil)
@@ -148,7 +149,7 @@ class PlayerVC: UIViewController {
         }
     }
     @IBAction func btnLikeClicked(_ sender: Any) {
-            self.likeShabad(shabad!.id, like: !likeButton.isSelected)
+        self.likeShabad(shabad!.id, like: !likeButton.isSelected)
     }
     // MARK: - Other methods
     // Load lyrics of shabad
@@ -156,6 +157,7 @@ class PlayerVC: UIViewController {
         NetworkManager.startLoader()
         let queryString = "sggsRoutes/linesFrom/\(shabad.starting_id)/linesTo/\(shabad.ending_id)"
         NetworkManager.sharedManager.getRequest(with: queryString, nil) { (status, error, result) in
+            self.shabadLikedByUser()
             if status {
                 if let arrayJSON = result.array {
                     self.shabadDetailList.removeAll()
@@ -294,7 +296,7 @@ class PlayerVC: UIViewController {
             
         }
     }
-
+    
     @objc func likeShabad(_ shabadId: Int, like: Bool) {
         if let user = CoreDataService.getLogin() {
             NetworkManager.startLoader()
@@ -302,13 +304,36 @@ class PlayerVC: UIViewController {
             NetworkManager.sharedManager.postRequestWithAnyDataType(with: ShabadLike.shabadLikeURL, parameters) { (status, response, json) in
                 NetworkManager.stopLoader()
                 if status {
-                }
-                    else {
-                        
+                    if json["ResponseCode"].intValue == 200 {
+                        self.likeButton.isSelected = !self.likeButton.isSelected
+                        if self.likeButton.isSelected {
+                        self.likesCountLabel.text = "\(Int(self.likesCountLabel.text!)! + 1)"
+                        } else {
+                            self.likesCountLabel.text = "\(Int(self.likesCountLabel.text!)! - 1)"
+                        }
                     }
-                
+                }
+                else {
+                }
+            }
+        }
+    }
+    func shabadLikedByUser() {
+        if let user = CoreDataService.getLogin() {
+            NetworkManager.sharedManager.getRequest(with: "\(EndPointMethod.shabadLikedByUser)\(user.username!)/shabadLikes/\(shabad!.id)", nil) { (status, response, json) in
+                if status {
+                    self.likeButton.isSelected = json["Result"].boolValue
+                }
+                self.shabadLikes()
             }
             
+        }
+    }
+    func shabadLikes() {
+        NetworkManager.sharedManager.getRequest(with: "\(EndPointMethod.shabadLikes)\(shabad!.id)", nil) { (status, response, json) in
+            if status {
+                self.likesCountLabel.text = "\(json["likes"].intValue)"
+            }
         }
     }
     // MARK: - Actions
@@ -466,8 +491,8 @@ extension PlayerVC: PlayerDelegate {
             slider.value = duration.floatValue
             if duration.floatValue > 20 && isCurrentShabad {
                 if let id = shabad?.id {
-                self.isCurrentShabad = false
-                self.addShabadListener(id)
+                    self.isCurrentShabad = false
+                    self.addShabadListener(id)
                 }
             }
         }
@@ -486,20 +511,20 @@ extension PlayerVC: PlayerDelegate {
         }
     }
     func player(_ player: FRadioPlayer, playerStateDidChange state: FRadioPlayerState) {
-//        if state == .loading {
-//          //  self.view.makeToast(PlayingState.loading)
-//            rewindButton.isEnabled = false
-//            forwardButton.isEnabled = false
-//            playButton.isEnabled = false
-//        } else if state == .loadingFinished {
-//     //       self.view.makeToast(PlayingState.loadingFinished)
-//            rewindButton.isEnabled = true
-//            forwardButton.isEnabled = true
-//            if (player.playbackState == .playing) {
-//            playButton.isSelected = false
-//            playButton.isEnabled = true
-//            }
-//        }
+        //        if state == .loading {
+        //          //  self.view.makeToast(PlayingState.loading)
+        //            rewindButton.isEnabled = false
+        //            forwardButton.isEnabled = false
+        //            playButton.isEnabled = false
+        //        } else if state == .loadingFinished {
+        //     //       self.view.makeToast(PlayingState.loadingFinished)
+        //            rewindButton.isEnabled = true
+        //            forwardButton.isEnabled = true
+        //            if (player.playbackState == .playing) {
+        //            playButton.isSelected = false
+        //            playButton.isEnabled = true
+        //            }
+        //        }
     }
     
     func player(_ player: FRadioPlayer, playbackStateDidChange state: FRadioPlaybackState) {
@@ -508,7 +533,7 @@ extension PlayerVC: PlayerDelegate {
             forwardButton.isEnabled = true
             playButton.isEnabled = true
         } else {
-
+            
             //            rewindButton.isEnabled = false
             //            forwardButton.isEnabled = false
         }
@@ -598,7 +623,7 @@ extension PlayerVC: FBInterstitialAdDelegate {
         print(error.localizedDescription)
         self.shabadPlayer.player.play()
     }
-
+    
     func interstitialAdDidLoad(_ interstitialAd: FBInterstitialAd) {
         interstitialAd.show(fromRootViewController: self)
         self.shabadPlayer.player.stop()
