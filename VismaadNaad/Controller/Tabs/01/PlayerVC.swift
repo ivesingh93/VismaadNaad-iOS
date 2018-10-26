@@ -290,8 +290,8 @@ class PlayerVC: UIViewController {
     
     @objc func addShabadListener(_ listenerId: Int) {
         if let _ = CoreDataService.getLogin() {
-            let parameters = ["id": listenerId]
-            NetworkManager.sharedManager.postRequestWithAnyDataType(with: EndPointMethod.shabadListeners, parameters) { (status, response, json) in
+            let parameters = ShabadListener.parametersForShabadListener(id: listenerId)
+            NetworkManager.sharedManager.putRequest(with: ShabadListener.shabadListenerURL, parameters) { (status, response, json) in
             }
             
         }

@@ -76,19 +76,19 @@ class NetworkManager: NSObject {
                 onCompletion(false, response.response, [:])
             }
         }
-            .responseString { response in
-                print("String:\(response.result.value)")
-                switch(response.result) {
-                case .success(_):
-                    if let data = response.result.value{
-                        print(data)
-                    }
-                    
-                case .failure(_):
-                    print("Error message:\(response.result.error)")
-                    break
-                }
-        }
+//            .responseString { response in
+//                print("String:\(response.result.value)")
+//                switch(response.result) {
+//                case .success(_):
+//                    if let data = response.result.value{
+//                        print(data)
+//                    }
+//
+//                case .failure(_):
+//                    print("Error message:\(response.result.error)")
+//                    break
+//                }
+//        }
 
     }
     
@@ -116,21 +116,45 @@ class NetworkManager: NSObject {
                 onCompletion(false, response.response, [:])
             }
         }
-            .responseString { response in
-                print("String:\(response.result.value)")
-                switch(response.result) {
-                case .success(_):
-                    if let data = response.result.value{
-                        print(data)
-                    }
-                    
-                case .failure(_):
-                    print("Error message:\(response.result.error)")
-                    break
-                }
+//            .responseString { response in
+//                print("String:\(response.result.value)")
+//                switch(response.result) {
+//                case .success(_):
+//                    if let data = response.result.value{
+//                        print(data)
+//                    }
+//
+//                case .failure(_):
+//                    print("Error message:\(response.result.error)")
+//                    break
+//                }
+//        }
+    }
+    func putRequest(with subUrl:String, _ parameters:[String: Any], _ onCompletion: @escaping ServiceResponse) -> Void {
+        if reachabilityManager?.isReachable == false {
+            NetworkManager.stopLoader()
+            Helper.showMessage(message: Messages.noInternet, success: false)
+            return
+        }
+        let urlStr = API.baseURL + subUrl
+        let url = Foundation.URL(string: urlStr)
+        
+        print(parameters)
+        print(url!)
+        
+        Alamofire.request(url!, method: .put, parameters: parameters, encoding: JSONEncoding.default, headers: nil).responseJSON { response in
+            print(response)
+            
+            switch response.result {
+            case .success(let value):
+                let json = JSON(value)
+                onCompletion(true, response.response, json)
+            case .failure(let error):
+                print(error)
+                onCompletion(false, response.response, [:])
+            }
         }
     }
-    
     func postRequestWithArrayEncoded(with subUrl:String, _ parameters:[[String: Any]], _ onCompletion: @escaping ServiceResponse) -> Void {
         if reachabilityManager?.isReachable == false {
             NetworkManager.stopLoader()
@@ -186,7 +210,6 @@ class NetworkManager: NSObject {
         }
         let urlStr = (API.baseURL + subUrl).addingPercentEncoding(withAllowedCharacters: CharacterSet.urlQueryAllowed)
         let url = Foundation.URL(string: urlStr!)
-        print("\(url)")
         Alamofire.request(url!, method: .get, parameters: parameters, encoding: JSONEncoding.default, headers: nil).responseJSON { response in
             print("\(response)")
             
@@ -200,8 +223,6 @@ class NetworkManager: NSObject {
             }
         }
     }
-    
-    
 }
 
 
@@ -280,12 +301,6 @@ struct PlaylistMethod {
         parameter["username"] = username
         parameter["playlist_name"] = playlist_name
         parameter["id"] = id
-//        parameter["raagi_name"] = raagi_name
-//        parameter["sathaayi_id"] = sathaayi_id
-//        parameter["shabad_english_title"] = shabad_english_title
-//        parameter["starting_id"] = starting_id
-//        parameter["ending_id"] = ending_id
-//        parameter["shabad_url"] = shabad_url
         return parameter
     }
     static let removeShabadURL = "userRoutes/removeShabads"
@@ -305,6 +320,16 @@ struct ShabadLike {
         parameter["username"] = username
         parameter["id"] = id
         parameter["like"] = like
+        return parameter
+    }
+}
+
+struct ShabadListener {
+    static let shabadListenerURL = "raagiRoutes/shabadListeners/"
+    static func parametersForShabadListener(id: Int) -> [String : Any] {
+        
+        var parameter = [String : Any]()
+        parameter["id"] = id
         return parameter
     }
 }
