@@ -971,7 +971,7 @@
                                         </constraints>
                                         <fontDescription key="fontDescription" name="Georgia" family="Georgia" pointSize="17"/>
                                         <inset key="imageEdgeInsets" minX="-10" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                        <state key="normal" title="Like us on Facebook" image="like">
+                                        <state key="normal" title="Like us on Facebook" image="thumbLike">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                         <connections>
@@ -2676,7 +2676,7 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                         </subviews>
-                        <color key="backgroundColor" red="0.17254901959999999" green="0.21176470589999999" blue="0.2470588235" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.19607843137254902" green="0.19607843137254902" blue="0.19607843137254902" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="PhH-1t-aIn" firstAttribute="bottom" secondItem="ibQ-7z-aIa" secondAttribute="bottom" id="27r-XF-tIk"/>
                             <constraint firstItem="WUH-SC-pzz" firstAttribute="trailing" secondItem="ibQ-7z-aIa" secondAttribute="trailing" id="7V4-zq-8hS"/>
@@ -2918,12 +2918,13 @@
         <image name="next" width="48" height="48"/>
         <image name="playlist_icon" width="240" height="240"/>
         <image name="search" width="48" height="48"/>
+        <image name="thumbLike" width="36" height="36"/>
         <image name="unlike" width="128" height="128"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="3qR-Ox-rf8"/>
         <segue reference="Zm6-NS-88B"/>
-        <segue reference="KFW-d4-PQ3"/>
+        <segue reference="DH5-ih-S1k"/>
         <segue reference="c49-Gp-uy7"/>
     </inferredMetricsTieBreakers>
 </document>

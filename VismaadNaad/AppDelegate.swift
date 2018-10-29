@@ -48,8 +48,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     func registerDefaultSettings() {
         UserDefaults.standard.set(27.0, forKey: UserDefaultsKey.zoomLevel)
-        UserDefaults.standard.set(ColorNames.white, forKey: UserDefaultsKey.color)
-        UserDefaults.standard.set([], forKey: UserDefaultsKey.language)
+        UserDefaults.standard.set(ColorNames.green, forKey: UserDefaultsKey.color)
+        UserDefaults.standard.set([Language.punjabi, Language.teeka], forKey: UserDefaultsKey.language)
         UserDefaults.standard.synchronize()
     }
 

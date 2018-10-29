@@ -84,7 +84,7 @@ class PlayerVC: UIViewController {
             rewindButton.isEnabled = false
             forwardButton.isEnabled = false
             playButton.isEnabled = false
-//            loadShabadLyrics(shabad)
+          loadShabadLyrics(shabad)
         }
         // If shabad is already playing, enable rewind and pause button
         if isAlreadyPlayingShabad == true {
@@ -299,10 +299,8 @@ class PlayerVC: UIViewController {
     
     @objc func likeShabad(_ shabadId: Int, like: Bool) {
         if let user = CoreDataService.getLogin() {
-            NetworkManager.startLoader()
             let parameters = ShabadLike.parametersForShabadLike(username: user.username!, id: shabadId, like: like)
             NetworkManager.sharedManager.postRequestWithAnyDataType(with: ShabadLike.shabadLikeURL, parameters) { (status, response, json) in
-                NetworkManager.stopLoader()
                 if status {
                     if json["ResponseCode"].intValue == 200 {
                         self.likeButton.isSelected = !self.likeButton.isSelected
