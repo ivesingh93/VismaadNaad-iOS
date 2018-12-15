@@ -149,7 +149,12 @@ class PlayerVC: UIViewController {
         }
     }
     @IBAction func btnLikeClicked(_ sender: Any) {
-        self.likeShabad(shabad!.id, like: !likeButton.isSelected)
+        if CoreDataService.isGuestUser() == false {
+            self.likeShabad(shabad!.id, like: !likeButton.isSelected)
+        }
+        else {
+            Helper.showMessage(message: Messages.notLoggedIn, success: false)
+        }
     }
     // MARK: - Other methods
     // Load lyrics of shabad
@@ -289,12 +294,12 @@ class PlayerVC: UIViewController {
     }
     
     @objc func addShabadListener(_ listenerId: Int) {
-        if let _ = CoreDataService.getLogin() {
+//        if let _ = CoreDataService.getLogin() {
             let parameters = ShabadListener.parametersForShabadListener(id: listenerId)
             NetworkManager.sharedManager.putRequest(with: ShabadListener.shabadListenerURL, parameters) { (status, response, json) in
             }
             
-        }
+//        }
     }
     
     @objc func likeShabad(_ shabadId: Int, like: Bool) {

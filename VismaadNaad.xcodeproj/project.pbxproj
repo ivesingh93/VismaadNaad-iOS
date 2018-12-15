@@ -839,19 +839,19 @@
 			baseConfigurationReference = A3503FA1FE776B018A1CD979 /* Pods-VismaadNaad.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				CODE_SIGN_STYLE = Manual;
-				DEVELOPMENT_TEAM = 8LEUBP7S56;
+				DEVELOPMENT_TEAM = 45BS23838P;
 				INFOPLIST_FILE = VismaadNaad/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.nextgen.iOS;
+				PRODUCT_BUNDLE_IDENTIFIER = com.app.vismaadNaad;
 				PRODUCT_NAME = VismaadNaad;
 				PROVISIONING_PROFILE = "b14d26bf-377a-47f0-8fa1-9f720d1ace68";
-				PROVISIONING_PROFILE_SPECIFIER = NextGen_21Feb;
+				PROVISIONING_PROFILE_SPECIFIER = VismaadNaadAppStore;
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -862,19 +862,19 @@
 			baseConfigurationReference = C8F5D23427B637B6175C9E54 /* Pods-VismaadNaad.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				CODE_SIGN_STYLE = Manual;
-				DEVELOPMENT_TEAM = 8LEUBP7S56;
+				DEVELOPMENT_TEAM = 45BS23838P;
 				INFOPLIST_FILE = VismaadNaad/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.nextgen.iOS;
+				PRODUCT_BUNDLE_IDENTIFIER = com.app.vismaadNaad;
 				PRODUCT_NAME = VismaadNaad;
 				PROVISIONING_PROFILE = "b14d26bf-377a-47f0-8fa1-9f720d1ace68";
-				PROVISIONING_PROFILE_SPECIFIER = NextGen_21Feb;
+				PROVISIONING_PROFILE_SPECIFIER = VismaadNaadAppStore;
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};

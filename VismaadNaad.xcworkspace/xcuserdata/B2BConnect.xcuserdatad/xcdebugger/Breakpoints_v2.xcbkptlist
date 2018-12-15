@@ -58,12 +58,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "VismaadNaad/Controller/Tabs/01/PlayerVC.swift"
-            timestampString = "554924026.77965"
+            timestampString = "566554158.934803"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "388"
-            endingLineNumber = "388"
-            landmarkName = "positionBannerViewFullWidthAtBottomOfView(_:)"
+            startingLineNumber = "393"
+            endingLineNumber = "393"
+            landmarkName = "fastRewind()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
